@@ -1,0 +1,137 @@
+body { 
+    -webkit-font-smoothing: antialiased; 
+    text-rendering: optimizeLegibility; 
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0px; 
+    font-size: 17px; 
+    color: #000; 
+    font-weight: 400; 
+    line-height: 32px; 
+    background-color: #E8EBF3; 
+}
+
+h1, h2, h3, h4, h5, h6 { 
+    color: #25292a; 
+    margin: 0px 0px 10px 0px; 
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 700; 
+    letter-spacing: -1px; 
+    line-height: 1; 
+}
+
+h1 { 
+    font-size: 34px; 
+}
+
+h2 { 
+    font-size: 28px; 
+    line-height: 38px; 
+    color: #A70014;
+}
+
+h3 { 
+    font-size: 22px; 
+    line-height: 32px; 
+    color: #A70014;
+}
+
+h4 { 
+    font-size: 20px; 
+}
+
+h5 { 
+    font-size: 17px; 
+}
+
+h6 { 
+    font-size: 12px; 
+}
+
+p { 
+    margin: 0 0 20px; 
+    line-height: 1.7; 
+    text-align: justify;
+}
+
+p:last-child { 
+    margin: 0px; 
+}
+
+/* ul, ol { } */
+
+a { 
+    text-decoration: none; 
+    color: #8d8f90; 
+    -webkit-transition: all 0.3s; 
+    -moz-transition: all 0.3s; 
+    transition: all 0.3s; 
+}
+
+a:focus, a:hover { 
+    text-decoration: none; 
+    color: #A70014; 
+}
+
+.page-header { 
+    position: relative; 
+    background-size: cover; 
+}
+
+.page-caption { 
+    padding-top: 170px; 
+    padding-bottom: 174px; 
+}
+
+.page-title { 
+    font-size: 70px; 
+    line-height: 1; 
+    color: #E8EBF3; 
+    font-weight: 600; 
+    text-align: center; 
+    text-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.5),  /* Shadow to the left and right */
+        0 0 10px rgba(0, 0, 0, 0.4), /* More shadow spread */
+        0 0 15px rgba(0, 0, 0, 0.3), /* Increasing blur */
+        0 0 20px rgba(0, 0, 0, 0.2), /* Further blur */
+        0 0 25px rgba(0, 0, 0, 0.1); /* Even more blur */
+}
+
+.page-date {
+    line-height: 1;
+    color: #E8EBF3;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+    text-shadow: 
+        0 0 5px rgba(0, 0, 0, 0.5),  /* Shadow to the left and right */
+        0 0 10px rgba(0, 0, 0, 0.4), /* More shadow spread */
+        0 0 15px rgba(0, 0, 0, 0.3), /* Increasing blur */
+        0 0 20px rgba(0, 0, 0, 0.2), /* Further blur */
+        0 0 25px rgba(0, 0, 0, 0.1); /* Even more blur */
+}
+
+.card-section { 
+    position: relative; 
+    bottom: 60px; 
+}
+
+/* .card-block { 
+    padding: 80px; 
+} */
+
+.card-block {
+    background-color: #E8EBF3;
+    padding: 80px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Remove fixed height */
+    height: auto; /* This ensures the height adapts to the content */
+    min-height: 200px; /* Optional: To give the card a baseline height */
+    overflow: hidden; /* Prevents content overflow */
+}
+
+
+.section-title { 
+    margin-bottom: 60px; 
+}
