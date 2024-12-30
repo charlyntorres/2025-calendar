@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+        <title>2025 Calendar</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+        <!-- Ubuntu and Squada Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Squada+One&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+  
+    <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar navbar-light justify-content-between navbar-expand-md">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">2025 Calendar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+
+        <div class="container-fluid mt-5">
+            <div class="row">
+                <!-- LEFT COLUMN FOR CALENDAR -->
+                <div class="col-lg-3 col-md-4">
+                    <div class="border p-4">
+                        <!-- CURRENT TIME -->
+                        <h5>Current Time</h5>
+                        <p id="current-time"></p>
+                        <br>
+
+                        <!-- CALENDAR VIEW -->
+                        <h5>Month View</h5>
+                        <div id="current-month" class="month-view-sidemenu">
+                            <h5 class="current-month-view"></h5>
+
+                            <!-- DAYS OF THE WEEK -->
+                            <ul id="days-list" class="days-sidemenu">
+                                <li style="color: #A70014;">S</li>
+                                <li>M</li>
+                                <li>T</li>
+                                <li>W</li>
+                                <li>TH</li>
+                                <li>F</li>
+                                <li>S</li>
+                            </ul>
+
+                            <!-- DATES OF THE MONTH -->
+                            <ul id="dates-list" class="dates-sidemenu">
+                                <!-- Will be filled dynamically -->
+                            </ul>
+                        </div>
+                        <br>
+
+                        <h5>List of Holidays</h5>
+                        <ul id="holiday-list">
+                            <!-- Will be filled dynamically -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- MAIN CALENDAR -->
+                <div class="col-lg-9 col-md-8">
+                    <div class="border p-4">                        
+                        <!-- MAIN CALENDAR -->
+                        <div class="calendar">
+                            <!-- JANUARY -->
+                            <div class="sep-calendar calendar-month" data-month="January">
+                                <h5>JANUARY</h5>
+                                <!-- days of the week -->
+                                <ul class="days">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date" id="january-dates">
+                                    <li class="previous-month">29</li>
+                                    <li>30</li>
+                                    <li>31</li>
+                                    <li class="first-day"><a href="/holiday-pages/january/jan-1.html" class="holiday" target="_blank">1</a></li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li><a href="/holiday-pages/january/jan-23.html" class="holiday" target="_blank">23</a></li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li><a href="/holiday-pages/january/jan-29.html" class="holiday" target="_blank">29</a></li>
+                                    <li>30</li>
+                                    <li class="last-day">31</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                </ul>
+                            </div>
+
+                            <!-- FEBRUARY -->
+                            <div class="sep-calendar calendar-month" data-month="February">
+                                <h5>FEBRUARY</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="february-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>31</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li class="holiday"><a href="/holiday-pages/february/feb-25.html" class="holiday" target="_blank">25</a></li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li class="last-day">28</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                </ul>
+                            </div>
+
+                            <!-- MARCH -->
+                            <div class="sep-calendar calendar-month" data-month="March">
+                                <h5>MARCH</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="march-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="last-day">31</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                </ul>
+                            </div>
+
+                            <!-- APRIL -->
+                            <div class="sep-calendar calendar-month" data-month="April">
+                                <h5>APRIL</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="april-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">30</li>
+                                    <li>31</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li class="holiday"><a href="/holiday-pages/april/apr-9.html" class="holiday" target="_blank">9</a></li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li class="holiday"><a href="/holiday-pages/april/apr-17.html" class="holiday" target="_blank">17</a></li>
+                                    <li class="holiday"><a href="/holiday-pages/april/apr-18.html" class="holiday" target="_blank">18</a></li>
+                                    <li class="holiday"><a href="/holiday-pages/april/apr-19.html" class="holiday" target="_blank">19</a></li>
+                                    <li class="holiday"><a href="/holiday-pages/april/apr-20.html" class="holiday" target="_blank">20</a></li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li class="last-day">30</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                </ul>
+                            </div>
+
+                            <!-- MAY -->
+                            <div class="sep-calendar calendar-month" data-month="May">
+                                <h5>MAY</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="may-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="first-day holiday"><a href="/holiday-pages/may/may-1.html" class="holiday" target="_blank">1</a></li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="last-day">31</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                </ul>
+                            </div>
+
+                            <!-- JUNE -->
+                            <div class="sep-calendar calendar-month" data-month="June">
+                                <h5>JUNE</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="june-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li class="holiday"><a href="/holiday-pages/june/june-12.html" class="holiday" target="_blank">12</a></li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                </ul>
+                            </div>
+
+                            <!-- JULY -->
+                            <div class="sep-calendar calendar-month" data-month="July">
+                                <h5>JULY</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="july-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">29</li>
+                                    <li>30</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="last-day">31</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                </ul>
+                            </div>
+
+                            <!-- AUGUST -->
+                            <div class="sep-calendar calendar-month" data-month="August">
+                                <h5>AUGUST</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="august-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>31</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li class="holiday"><a href="/holiday-pages/august/aug-21.html" class="holiday" target="_blank">21</a></li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li class="holiday"><a href="/holiday-pages/august/aug-25.html" class="holiday" target="_blank">25</a></li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="last-day">31</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                </ul>
+                            </div>
+
+                            <!-- SEPTEMBER -->
+                            <div class="sep-calendar calendar-month" data-month="September">
+                                <h5>SEPTEMBER</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="september-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">31</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li class="last-day">30</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                </ul>
+                            </div>
+
+                            <!-- OCTOBER -->
+                            <div class="sep-calendar calendar-month" data-month="October">
+                                <h5>OCTOBER</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="october-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li class="last-day">31</li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                </ul>
+                            </div>
+
+                            <!-- NOVEMBER -->
+                            <div class="sep-calendar calendar-month" data-month="November">
+                                <h5>NOVEMBER</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="november-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li>30</li>
+                                    <li>31</li>
+                                    <li class="first-day holiday"><a href="/holiday-pages/november/nov-1.html" class="holiday" target="_blank">1</a></li>
+                                    <li class="holiday"><a href="/holiday-pages/november/nov-2.html" class="holiday" target="_blank">2</a></li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li>24</li>
+                                    <li>25</li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li class="last-day holiday"><a href="/holiday-pages/november/nov-30.html" class="holiday" target="_blank">30</a></li>                
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                </ul>
+                            </div>
+
+                            <!-- DECEMBER -->
+                            <div class="sep-calendar calendar-month" data-month="December">
+                                <h5>DECEMBER</h5>
+                                <!-- days of the week -->
+                                <ul class="days" id="december-dates">
+                                    <li>S</li>
+                                    <li>M</li>
+                                    <li>T</li>
+                                    <li>W</li>
+                                    <li>TH</li>
+                                    <li>F</li>
+                                    <li>S</li>
+                                </ul>
+                                <!-- days -->
+                                <ul class="date">
+                                    <li class="previous-month">30</li>
+                                    <li class="first-day">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                    <li>11</li>
+                                    <li>12</li>
+                                    <li>13</li>
+                                    <li>14</li>
+                                    <li>15</li>
+                                    <li>16</li>
+                                    <li>17</li>
+                                    <li>18</li>
+                                    <li>19</li>
+                                    <li>20</li>
+                                    <li>21</li>
+                                    <li>22</li>
+                                    <li>23</li>
+                                    <li class="holiday"><a href="/holiday-pages/december/dec-24.html" class="holiday" target="_blank">24</a></li>
+                                    <li class="holiday"><a href="/holiday-pages/december/dec-25.html" class="holiday" target="_blank">25</a></li>
+                                    <li>26</li>
+                                    <li>27</li>
+                                    <li>28</li>
+                                    <li>29</li>
+                                    <li class="holiday"><a href="/holiday-pages/december/dec-30.html" class="holiday" target="_blank">30</a></li>
+                                    <li class="holiday"><a href="/holiday-pages/december/dec-31.html" class="holiday" target="_blank">31</a></li>
+                                    <li>1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                    <li>4</li>
+                                    <li>5</li>
+                                    <li>6</li>
+                                    <li>7</li>
+                                    <li>8</li>
+                                    <li>9</li>
+                                    <li>10</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- DISPLAYS CURRENT TIME -->
+        <script>
+            // displays current time
+            function updateTime() {
+                const currentTime = new Date().toLocaleTimeString();
+                document.getElementById('current-time').textContent = currentTime;
+            }
+            setInterval(updateTime, 1000);
+
+            // sets current month view
+            function setCurrentMonthView() {
+                const currentDate = new Date();
+                const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
+                const currentDay = currentDate.getDate(); // get the current day of the month
+                updateMonthView(currentMonth, currentDay);
+            }
+            
+            // updates the left side menu's month view
+            function updateMonthView(month, currentDay) {
+                const monthView = document.getElementById('current-month');
+                monthView.querySelector('h5').textContent = month.toUpperCase();
+
+                // gets the number of days in the selected month
+                const monthIndex = new Date(Date.parse(month + " 1, 2025")).getMonth();
+                const year = 2025
+                const daysInMonth = new Date(year, monthIndex + 1, 0).getDate(); 
+
+                // gets the starting day of the month
+                const firstDayofMonth = new Date(year, monthIndex, 1).getDay(); 
+
+                // clear and updates dates
+                const dateList = document.getElementById('dates-list');
+                dateList.innerHTML = '';
+
+                // adds empty list items for days before the first day of the month
+                for (let i = 0; i < firstDayofMonth; i++) {
+                    const emptyItem = document.createElement('li');
+                    dateList.appendChild(emptyItem);
+                }
+
+                // adds the actual days of the month
+                for (let i = 1; i <= daysInMonth; i++) {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = i;
+
+                    // adds a class to highlight the current day
+                    if (i === currentDay) {
+                        listItem.classList.add('highlight-today');
+                    }
+                    dateList.appendChild(listItem);
+                }
+
+                updateHolidays(month);
+            }
+
+            function updateHolidays(month) {
+                // updates the holiday list
+                const holidayList = document.getElementById('holiday-list');
+                holidayList.innerHTML = ''; 
+
+                // list of holidays per month
+                const holidays = {
+                    January: ['New Year\'s Day', 'First Philippine Republic Day', 'Lunar New Year\'s Day'],
+                    February: ['People Power Anniversary'],
+                    March: ['No holidays'],
+                    April: ['The Day of Valor', 'Maundy Thursday', 'Good Friday', '	Black Saturday', 'Easter Sunday'],
+                    May: ['Labor Day'],
+                    June: ['Independence Day'],
+                    July: ['No holidays'],
+                    August: ['Ninoy Aquino Day', 'National Heroes Day'],
+                    September: ['No holidays'],
+                    October: ['No holidays'],
+                    November: ['All Saints\' Day', 'All Souls\' Day', 'Bonifacio Day'],
+                    December: ['Christmas Eve', 'Christmas Day', 'Rizal Day', 'New Year\'s Eve']
+                };
+
+                // updates holiday list
+                (holidays[month] || []).forEach(holiday => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = holiday;
+                    holidayList.appendChild(listItem);
+                });
+            }
+
+
+            // attaches click event listeners to each month in the calendar
+            document.querySelectorAll('.calendar-month').forEach(element => {
+                element.addEventListener('click', () => {
+                    const month = element.getAttribute('data-month');
+                    updateMonthView(month);
+                    updateHolidays(month);
+                });
+            });
+
+            // sets current month view upon loading the page
+            window.addEventListener('DOMContentLoaded', (event) => {
+                setCurrentMonthView(); 
+            });
+        </script>
+
+  </body>
+</html>
