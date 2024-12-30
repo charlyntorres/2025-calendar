@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* padding: 20px; */
+    background-color: #E8EBF3;
+    font-family: 'Ubuntu', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
+
+/* ---------- NAVBAR STYLES ---------- */
+
+/* navbar */
+.container-fluid {
+    /* margin-top: 0px; */
+    background-color: #E8EBF3;
+}
+
+/* 2025 calendar text */
+.container-fluid .navbar-brand {
+    color: #A70014;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: xx-large;
+    font-weight: bolder;
+    margin-left: 45px;
+}
+
+/* holidays text normal state */
+.navbar-text.me-4 .nav-link {
+    padding: 5px;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.1rem; 
+}
+
+/* holidays text when hovered */
+.navbar-text.me-4 .nav-link:hover {
+    color: #A70014;
+    text-decoration: underline;
+}
+
+  
+
+
+
+/* MAIN CALENDAR */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-template-columns: repeat(4, 1fr); */
+    grid-template-rows: auto; /* Automatically adjust rows */
+    gap: 20px; /* Space between boxes */
+    margin: 0 auto;  /* adjust if no tabs will be added */
+    width: 100%; /* Ensure it spans the available space */
+}
+
+/* the box per month */
+.sep-calendar {
+    box-shadow: 1px 1px 10px 0 rgba(0, 0, 0, .2),
+                3px 3px 10px 0 #241D1F;;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    flex: 1 0 calc(23% - 1rem);
+    font-size: 0.85rem;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.sep-calendar:hover {
+    background-color: rgb(240, 224, 234);
+}
+
+/* month name */
+.sep-calendar h5 {
+    text-align: center;
+    padding: 0.3rem;
+    background-color: #A70014;  /* remove */
+    border-radius: 4px; /* remove */
+    color: #E8EBF3;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+}
+
+/* days of the week and dates */
+.sep-calendar ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 700;
+    font-size: small;
+}
+
+/* days of the week and dates */
+.sep-calendar li {
+    padding: 3px;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+.date li {
+    border-radius: 50%;
+    padding: 5px;
+    margin: 2px;
+}
+
+/* sundays */
+.date li:nth-child(7n + 1) {
+    color: #A70014;
+}
+
+/* dates from previous month */
+.previous-month, .previous-month~li {
+    opacity: .5;
+}
+
+/* current month's dates */
+.first-day, .first-day~li {
+    opacity: 1 !important;
+    font-weight: 700;
+}
+
+/* dates from next month */
+.last-day~li {
+    opacity: .5 !important;
+}
+
+.holiday {
+    color: #A70014;
+    text-decoration: underline;
+}
+
+.today-btn {
+    background-color: #A70014;
+    border-color: #A70014;
+    border-radius: 0;
+    float: left;
+}
+
+.today-btn:hover {
+    background-color: gray;
+    border-color: gray;
+}
+
+.today-btn:active {
+    background-color: #000;
+    border-color: #000 !important;
+}
+
+
+
+
+
+/* ---------- LEFT SIDE MENU ---------- */
+/* includes the ff texts: current time, calendar view, holidays this month */
+/* .border h4 {
+    color: #A70014;
+} */
+
+#current-time {
+    font-weight: bold;
+    font-family: "Orbitron", serif;
+    font-size: 40px;    /* make this responsive */
+    color: #241D1F;
+    text-align: center;
+}
+
+/* Month Name of the Current Month View */
+.current-month-view {
+    background-color: #241D1F;
+    text-align: center;
+    color: #E8EBF3;
+    font-family: 'Ubuntu', sans-serif;
+    padding: 0.3rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;    
+    border-radius: 4px;
+}
+
+/* Days of the Current Month View [S, M, T, W, T, F, S] */
+.days-sidemenu {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+/* Dates of the Current Month View */
+.dates-sidemenu {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    list-style: none;
+    padding: 3px;
+    margin: 10px 0;
+    text-align: center;
+    font-weight: 500;
+}
+
+/* sundays */
+.dates-sidemenu li:nth-child(7n + 1) {
+    color: #A70014;
+}
+
+/* Highlights the current day */
+#dates-list li.highlight-today {
+    background-color: #241D1F; 
+    color: white;    
+}
+
+#holiday-list {
+    list-style: square inside;
+    padding-left: 10px;
+}
+  
+#holiday-list li {
+    padding: 5px 0;
+    font-weight: 500;
+}
+  
+h3, h5 {
+    font-weight: bold;
+    color: #A70014;
+}
